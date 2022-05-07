@@ -8,20 +8,12 @@ pipeline {
         }
         stage('Build') { 
             steps {
-                EXIT_STATUS_BUILD = """${sh(
-                returnStatus: true,
-                script: './build.sh'
-                )}"""
-                print "${EXIT_STATUS_BUILD}"
+                sh('./build.sh')
             }
         }
         stage('Deploy') { 
             steps {
-                EXIT_STATUS = """${sh(
-                returnStatus: true,
-                script: './deploy.sh'
-                )}"""
-                print "${EXIT_STATUS}"
+                sh('./deploy.sh')
             }
         }
     }
