@@ -12,7 +12,7 @@ pipeline {
                 returnStatus: true,
                 script: './build.sh'
                 )}"""
-                echo ${EXIT_STATUS_BUILD}
+                print "${EXIT_STATUS_BUILD}"
             }
         }
         stage('Deploy') { 
@@ -21,7 +21,7 @@ pipeline {
                 returnStatus: true,
                 script: './deploy.sh'
                 )}"""
-                echo ${EXIT_STATUS}
+                print "${EXIT_STATUS}"
             }
         }
     }
