@@ -8,12 +8,20 @@ pipeline {
         }
         stage('Build') { 
             steps {
-                sh('./build.sh')
+                script {
+                    res= bat(script: """
+                        build.sh
+                        """,returnStdout:true)
+                }
             }
         }
         stage('Deploy') { 
             steps {
-                sh('./deploy.sh')
+                script {
+                    res= bat(script: """
+                        deploy.sh
+                        """,returnStdout:true)
+                }
             }
         }
     }
