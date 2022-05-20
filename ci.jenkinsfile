@@ -29,10 +29,5 @@ pipeline {
                 build(job: 'devops_project_monitoring')
             }
         }
-         stage('Selenium') { 
-            steps {
-                build(job: 'devops_project_selenium')
-            }
-        }
     }
 }
